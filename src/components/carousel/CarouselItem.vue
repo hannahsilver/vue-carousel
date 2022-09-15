@@ -1,12 +1,14 @@
 <template>
-  <div class="carousel-item">
-    <img :src="slide" />
-  </div>
+  <transition name="slide-in">
+    <div class="carousel-item" v-show="currentSlide === index">
+      <img :src="slide" />
+    </div>
+  </transition>
 </template>
 
 <script>
 export default {
-  props: ["slide"],
+  props: ["slide", "currentSlide", "index"],
 };
 </script>
 
@@ -17,5 +19,18 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.slide-in-enter-active,
+.slide-in-leave-active {
+  transition: all 1s ease-in-out;
+}
+
+.slide-in-enter-from {
+  transfrom: translateX(-100%);
+}
+
+.slide-in-leave-to {
+  transfrom: translateX(100%);
 }
 </style>
