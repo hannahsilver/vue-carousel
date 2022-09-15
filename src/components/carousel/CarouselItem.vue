@@ -27,10 +27,10 @@ export default {
 }
 
 .slide-in-enter-from {
-  transfrom: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .slide-in-leave-to {
-  transfrom: translateX(100%);
+  transform: translateX(100%);
 }
 </style>
